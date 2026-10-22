@@ -10,7 +10,10 @@ option(SE_APP "Compile the supereight application" ON)
 option(SE_ASSERTS "Compile supereight with runtime assertions enabled" OFF)
 
 # Find dependencies
-find_package(Eigen3 3.3 REQUIRED)
+find_package(Eigen3 REQUIRED)
+if(NOT Eigen3_VERSION OR Eigen3_VERSION VERSION_LESS 3.3)
+    message(FATAL_ERROR "Supereight2 requires Eigen 3.3 or newer, found ${Eigen3_VERSION}")
+endif()
 find_package(OpenCV REQUIRED COMPONENTS core imgcodecs imgproc)
 find_package(Boost REQUIRED) # We only need Boost.Pool which is a header-only library.
 find_package(TBB COMPONENTS tbb)
