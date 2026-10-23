@@ -1,6 +1,6 @@
 [submodule "third_party/srl_projection"]
 	path = third_party/srl_projection
-	url = https://github.com/smartroboticslab/srl-projection
+	url = https://github.com/gbionics/srl-projection
 [submodule "third_party/googletest"]
 	path = third_party/googletest
 	url = https://github.com/google/googletest.git
